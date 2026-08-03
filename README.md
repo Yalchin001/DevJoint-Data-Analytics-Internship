@@ -106,4 +106,4 @@ The SQL and Excel modules have been completed and documented. I am currently wor
 Junior Data Analyst
 
 - [GitHub Profile](https://github.com/Yalchin001)
-- [LinkedIn Profile](https://www.linkedin.com/in/yalchin-h-55344a13b/)
+- [LinkedIn Profile](https://www.linkedin.com/in/yalchinhasanov)
