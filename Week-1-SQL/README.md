@@ -53,6 +53,55 @@ The SQL queries were prepared to examine topics such as:
 
 ---
 
+## 📸 Checkpoint Evidence
+
+The screenshots below show the executed SQL queries and their results for each Week 1 checkpoint.
+
+<details>
+<summary><strong>Checkpoint 1 — SELECT, WHERE, ORDER BY and LIMIT</strong></summary>
+
+![Checkpoint 1 SQL result](./screenshots/checkpoint-01-select-filter.jpeg)
+
+</details>
+
+<details>
+<summary><strong>Checkpoint 2 — JOIN Operations</strong></summary>
+
+![Checkpoint 2 SQL result](./screenshots/checkpoint-02-joins.jpeg)
+
+</details>
+
+<details>
+<summary><strong>Checkpoint 3 — GROUP BY and HAVING</strong></summary>
+
+![Checkpoint 3 SQL result](./screenshots/checkpoint-03-group-by-having.jpeg)
+
+</details>
+
+<details>
+<summary><strong>Checkpoint 4 — CTE and Subquery</strong></summary>
+
+![Checkpoint 4 SQL result](./screenshots/checkpoint-04-cte-subquery.jpeg)
+
+</details>
+
+<details>
+<summary><strong>Checkpoint 5 — Window Functions</strong></summary>
+
+![Checkpoint 5 SQL result](./screenshots/checkpoint-05-window-functions.jpeg)
+
+</details>
+
+<details>
+<summary><strong>Checkpoint 6 — Query Optimization</strong></summary>
+
+![Checkpoint 6 SQL result](./screenshots/checkpoint-06-query-optimization.jpeg)
+
+</details>
+
+---
+
+
 ## 🧰 Tools Used
 
 - SQLite
