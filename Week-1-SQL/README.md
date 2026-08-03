@@ -31,7 +31,6 @@ The main objective was to use SQLite to explore relational data, write structure
 
 ---
 
-## 💼 Business Questions Addressed
 
 ## 💼 Business Questions Addressed
 
