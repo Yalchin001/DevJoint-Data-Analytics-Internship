@@ -33,13 +33,16 @@ The main objective was to use SQLite to explore relational data, write structure
 
 ## 💼 Business Questions Addressed
 
-The SQL queries were prepared to examine topics such as:
+## 💼 Business Questions Addressed
 
-- Customer and sales performance
-- Product and category comparisons
-- Order and shipping activity
-- Employee and management relationships
-- Rankings and cumulative results
+The SQL queries were prepared to complete the following analytical tasks:
+
+- Filter orders by product, discount, region, city, country, date, freight, and order value.
+- Combine product, category, order, supplier, and employee data using `LEFT JOIN`, `INNER JOIN`, and `SELF JOIN`.
+- Calculate category-level totals, averages, and product counts using `GROUP BY` and `HAVING`.
+- Identify products with total quantities above the overall average using a `CTE` and a subquery.
+- Rank product records and calculate cumulative quantities using window functions.
+- Compare product prices with category averages and explore query optimization using an index and `JOIN`.
 
 ---
 
