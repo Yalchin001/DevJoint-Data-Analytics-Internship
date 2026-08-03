@@ -87,7 +87,6 @@ The Excel dashboard includes:
 - Slicers
 - Timeline filters
 
----
 
 ---
 
