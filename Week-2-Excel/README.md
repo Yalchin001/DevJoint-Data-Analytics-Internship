@@ -102,19 +102,46 @@ The following sections document the six Week 2 checkpoints completed during the 
 <details>
 <summary><strong>Checkpoint 1 — Data Cleaning</strong></summary>
 
-### Data Cleaning and Preparation
+### 🧹 Data Cleaning and Preparation
 
-The `Orders` dataset was reviewed and prepared for analysis before applying formulas and creating PivotTables.
+The `Orders`, `People`, `Products`, and `Returns` worksheets were reviewed and prepared for analysis.
 
-The following preparation steps were completed:
+#### 1. Blank Row Handling
 
-- Reviewed the dataset structure and column headers.
-- Checked the `Order Date` and `Ship Date` fields for consistent date formatting.
-- Verified numeric fields such as `Sales`, `Quantity`, `Discount`, and `Profit`.
-- Retained table filters to support data validation and analysis.
-- Prepared the cleaned dataset for lookup formulas, calculated fields, PivotTables, and dashboard development.
+- Used the `ISBLANK` function to identify blank and non-blank cells.
+- Filtered the results by `FALSE` to retain the populated records.
+- Selected the filtered data using `Home > Find & Select > Go To Special > Visible Cells Only`.
+- Copied the visible records to a new worksheet.
+- After validating the copied data, the new worksheet was renamed using the original worksheet name and the previous worksheet was removed.
 
-![Checkpoint 1 - Data Cleaning](./screenshots/checkpoint-01-data-cleaning.jpeg)
+#### 2. Data Type Conversion and Validation
+
+- Converted date fields to the `Date` data type and numeric fields to the `Number` data type.
+- Converted the `Order Date` values using `Data > Data Tools > Text to Columns > Delimited`.
+- Created a temporary validation column using the `ISTEXT` function.
+- The function returned `FALSE` for all checked values, confirming that the dates were no longer stored as text.
+- Removed the temporary validation column after completing the check.
+
+#### 3. Target Margin Conversion
+
+- Reviewed the `Target Margin` column in the `Products` worksheet.
+- Used the `ISNUMBER` function to check whether the values were stored as numbers.
+- The function returned `FALSE`, confirming that the values were initially stored as text.
+- Converted the column using `Data > Data Tools > Text to Columns > Delimited`.
+- Applied the `Percentage` number format after the conversion.
+
+#### 4. Formatting Standardization
+
+- Standardized the data types across all four worksheets.
+- Changed the worksheet font to `Arial` for consistent presentation.
+
+#### 5. Duplicate Review
+
+Repeated values were found in individual columns; however, they belonged to different orders and distinct records. They were not complete duplicate rows.
+
+No valid records were removed because deleting these repeated values would cause data loss and could affect the accuracy of the final analysis.
+
+![Checkpoint 1 — Data Cleaning](screenshots/checkpoint-01-data-cleaning.jpeg)
 
 </details>
 
