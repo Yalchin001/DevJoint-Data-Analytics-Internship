@@ -6,6 +6,44 @@ This document provides a short explanation of the Excel formulas used during Wee
 
 The formulas were applied to retrieve related information, calculate business metrics, classify sales records, and prepare summary values for the dashboard.
 
+
+---
+
+## 📊 PivotTable Analysis
+
+PivotTables are not Excel formulas, but they were used as a major part of the Week 2 analysis to summarize the Superstore dataset and answer specific business questions.
+
+### Sales Analysis
+
+- **Sales by Product Category:** Technology generated the highest sales with 842,456.96.
+- **Top 10 Cities by Sales:** New York City recorded the highest sales with 256,368.16.
+- **Sales by Region:** The West region generated the highest sales with 739,879.80.
+- **Sales by Customer Segment:** The Consumer segment recorded the highest sales with 1,174,198.71.
+- **Top 10 Products by Sales:** Canon imageCLASS 2200 Advanced Copier generated the highest product sales with 61,599.82.
+
+### Profit Analysis
+
+- **Profit by Product Category:** Technology generated the highest profit with 147,310.81.
+- **Top 10 Cities by Profit:** New York City recorded the highest profit with 62,036.98.
+- **Profit by Region:** The West region generated the highest profit with 110,815.31.
+- **Profit by Customer Segment:** The Consumer segment recorded the highest profit with 137,357.33.
+
+### Order and Trend Analysis
+
+- **Top 10 Products by Order Count:** Staples recorded the highest order count with 60 orders.
+- **Yearly Sales:** Sales performance was summarized by year from 2023 to 2026.
+- **Year-over-Year Growth:** Sales growth percentages were calculated to compare annual performance.
+
+### PivotTable Configuration
+
+The PivotTables were created using fields such as:
+
+- `Category`, `City`, `Region`, `Segment`, `Product Name`, and `Order Date` in the **Rows** area.
+- `Sales` and `Profit` as **Sum** calculations in the **Values** area.
+- `Order ID` as a **Count** calculation for order frequency.
+- Top 10 value filters for city and product rankings.
+- Year grouping for annual sales and growth analysis.
+
 ---
 
 ## 🔎 Lookup Formulas
