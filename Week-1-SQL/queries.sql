@@ -21,7 +21,9 @@
    discount, excluding records where the discount is 0.
 */
 
-SELECT * FROM  "Order Details Extended" Where Trim(ProductName)="Tofu" and Discount>0 Order By Discount Limit 1
+SELECT * FROM  "Order Details Extended" 
+   Where Trim(ProductName)="Tofu" and Discount>0 
+   Order By Discount Limit 1
 
 
 /* Question 2:
@@ -33,7 +35,9 @@ SELECT * FROM  "Order Details Extended" Where Trim(ProductName)="Tofu" and Disco
    Helsinki in the Scandinavia region.
 */
 
-SELECT * FROM Orders where Trim(ShipRegion)="Scandinavia" and Trim(ShipCity)="Helsinki" Order By OrderDate Limit 5
+SELECT * FROM Orders 
+   where Trim(ShipRegion)="Scandinavia" and Trim(ShipCity)="Helsinki" 
+   Order By OrderDate Limit 5
 
 
 /* Question 3:
@@ -45,7 +49,9 @@ SELECT * FROM Orders where Trim(ShipRegion)="Scandinavia" and Trim(ShipCity)="He
    OrderID is between 10250 and 11000.
 */
 
-SELECT * FROM Orders Where ShipCountry="France" and OrderID between 10250 and 11000 Order By OrderID DESC limit 20
+SELECT * FROM Orders 
+   Where ShipCountry="France" and OrderID between 10250 and 11000 
+   Order By OrderID DESC limit 20
 
 
 /* Question 4:
@@ -57,7 +63,9 @@ SELECT * FROM Orders Where ShipCountry="France" and OrderID between 10250 and 11
    from Madrid in 2017 where the freight is at least 100.
 */
 
-SELECT * FROM Orders Where OrderDate between "2017-01-01" and "2017-12-31" and Trim(ShipCity)="Madrid" and Freight>=100 Order By ShippedDate DESC limit 10
+SELECT * FROM Orders 
+   Where OrderDate between "2017-01-01" and "2017-12-31" and Trim(ShipCity)="Madrid" and Freight>=100 
+   Order By ShippedDate DESC limit 10
 
 
 /* Question 5:
@@ -69,7 +77,9 @@ SELECT * FROM Orders Where OrderDate between "2017-01-01" and "2017-12-31" and T
    UnitPrice multiplied by UnitsOnOrder is at least 500.
 */
 
-SELECT * FROM Products Where UnitPrice*UnitsOnOrder>=500 Order By UnitPrice*UnitsOnOrder>=500 LIMIT 3
+SELECT * FROM Products 
+   Where UnitPrice*UnitsOnOrder>=500 
+   Order By UnitPrice*UnitsOnOrder>=500 LIMIT 3
 
 
 /* =====================================================
@@ -78,7 +88,7 @@ SELECT * FROM Products Where UnitPrice*UnitsOnOrder>=500 Order By UnitPrice*Unit
    ===================================================== */
 
 
-/* A. LEFT JOIN
+/* TASK 1 -  LEFT JOIN
 
    Question:
    Combine product, category, order-detail, and order
@@ -90,10 +100,15 @@ SELECT * FROM Products Where UnitPrice*UnitsOnOrder>=500 Order By UnitPrice*Unit
    related OrderID, CustomerID, OrderDate, and ShipCountry.
 */
 
-select pro.ProductID,pro.ProductName,pro.CategoryID,pro.QuantityPerUnit,cat.CategoryName,ext.OrderID,ord.CustomerID,ord.OrderDate,ord.ShipCountry from Products pro left JOIN Categories cat on pro.CategoryId = cat.CategoryId left join "Order Details Extended" ext on pro.ProductName = ext.ProductName left join Orders ord on ord.OrderID = ext.OrderID
+select pro.ProductID,pro.ProductName,pro.CategoryID,pro.QuantityPerUnit,cat.CategoryName,
+   ext.OrderID,ord.CustomerID,ord.OrderDate,ord.ShipCountry from Products pro 
+   left JOIN Categories cat
+   on pro.CategoryId = cat.CategoryId left join "Order Details Extended" ext 
+   on pro.ProductName = ext.ProductName 
+   left join Orders ord on ord.OrderID = ext.OrderID
 
 
-/* B. INNER JOIN
+/* TASK 2 -  INNER JOIN
 
    Question:
    Find detailed information about products whose prices
@@ -106,10 +121,17 @@ select pro.ProductID,pro.ProductName,pro.CategoryID,pro.QuantityPerUnit,cat.Cate
    SupplierRegion for the related products.
 */
 
-select abv.ProductName,pro.ProductID,pro.CategoryID,pro.UnitPrice,pro.UnitsInStock,pro.SupplierID,cat.CategoryName,prov.SupplierRegion from "Products Above Average Price" abv inner join Products pro on abv.ProductName= pro.ProductName inner join Categories cat on pro.CategoryID=cat.CategoryID inner join ProductDetails_V prov on abv.ProductName = prov.ProductName
+select abv.ProductName,pro.ProductID,pro.CategoryID,pro.UnitPrice,pro.UnitsInStock,
+   pro.SupplierID,cat.CategoryName,prov.SupplierRegion from  "Products Above Average Price" abv 
+   inner join Products pro 
+   on abv.ProductName= pro.ProductName 
+   inner join Categories cat 
+   on pro.CategoryID=cat.CategoryID 
+   inner join ProductDetails_V prov 
+   on abv.ProductName = prov.ProductName
 
 
-/* C. SELF JOIN
+/* TASK 3 -  SELF JOIN
 
    Question:
    Identify the manager of each employee.
@@ -121,7 +143,10 @@ select abv.ProductName,pro.ProductID,pro.CategoryID,pro.UnitPrice,pro.UnitsInSto
    manager.
 */
 
-select emp1.LastName as EmployeeLastName,emp1.FirstName as EmployeeName,emp2.LastName as ManagerLastName,emp2.FirstName as ManagerName from Employees emp1 left join Employees emp2 on emp1.ReportsTo=emp2.EmployeeID
+select emp1.LastName as EmployeeLastName,emp1.FirstName as EmployeeName,
+   emp2.LastName as ManagerLastName,emp2.FirstName as ManagerName from Employees emp1 
+   left join Employees emp2 
+   on emp1.ReportsTo=emp2.EmployeeID
 
 
 /* =====================================================
@@ -142,7 +167,10 @@ select emp1.LastName as EmployeeLastName,emp1.FirstName as EmployeeName,emp2.Las
    There are no NULL values in this table.
 */
 
-select CategoryID,sum(unitprice*QuantityPerUnit) as TotalSales,round(avg(unitprice*QuantityPerUnit),2) as Average,count(*) as Quantity from products Group by CategoryID having count(*)>1 order by CategoryID
+select CategoryID,sum(unitprice*QuantityPerUnit) as TotalSales,
+   round(avg(unitprice*QuantityPerUnit),2) as Average,count(*) as Quantity from products 
+   Group by CategoryID having count(*)>1 
+   order by CategoryID
 
 
 /* =====================================================
@@ -165,7 +193,9 @@ select CategoryID,sum(unitprice*QuantityPerUnit) as TotalSales,round(avg(unitpri
    them from highest to lowest.
 */
 
-with ProductSales as ( select ProductName,sum(Quantity) as TotalQuantity from "Order Details Extended" group by ProductName ) select * from ProductSales where TotalQuantity >(select avg(TotalQuantity) from ProductSales) order by TotalQuantity desc
+with ProductSales as ( select ProductName,sum(Quantity) as TotalQuantity from "Order Details Extended" 
+   group by ProductName ) select * from ProductSales 
+   where TotalQuantity >(select avg(TotalQuantity) from ProductSales) order by TotalQuantity desc
 
 
 /* =====================================================
@@ -174,7 +204,7 @@ with ProductSales as ( select ProductName,sum(Quantity) as TotalQuantity from "O
    ===================================================== */
 
 
-/* A. RANK
+/* 1. RANK
 
    Explanation:
    RANK does not assign a unique sequence number to every
@@ -193,7 +223,7 @@ over(order by ProductID)
 from "Order Details Extended"
 
 
-/* B. ROW_NUMBER
+/* 2. ROW_NUMBER
 
    Explanation:
    ROW_NUMBER assigns a different sequential number to
@@ -207,7 +237,7 @@ over(order by ProductID)
 from "Order Details Extended"
 
 
-/* C. SUM OVER
+/* 3. SUM OVER
 
    Explanation:
    SUM with OVER calculates a cumulative quantity according
@@ -225,7 +255,7 @@ from "Order Details Extended"
    ===================================================== */
 
 
-/* A. CREATE INDEX
+/* 1. CREATE INDEX
 
    Explanation:
    Query optimization means returning the same SQL result
@@ -246,7 +276,7 @@ ON Orders(OrderId)
 select * from Orders Where OrderId=20000
 
 
-/* B. REPLACING A CORRELATED SUBQUERY WITH A JOIN
+/* 2. REPLACING A CORRELATED SUBQUERY WITH A JOIN
 
    Question:
    Compare each product's price with the average price of
