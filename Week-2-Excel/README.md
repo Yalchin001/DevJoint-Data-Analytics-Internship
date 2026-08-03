@@ -89,6 +89,168 @@ The Excel dashboard includes:
 
 ---
 
+---
+
+## 📸 Checkpoint Evidence
+
+The following sections document the six Week 2 checkpoints completed during the Excel analysis.
+
+📥 [Download the completed Excel workbook](./superstore-sales-analysis.xlsx)
+
+---
+
+<details>
+<summary><strong>Checkpoint 1 — Data Cleaning</strong></summary>
+
+### Data Cleaning and Preparation
+
+The `Orders` dataset was reviewed and prepared for analysis before applying formulas and creating PivotTables.
+
+The following preparation steps were completed:
+
+- Reviewed the dataset structure and column headers.
+- Checked the `Order Date` and `Ship Date` fields for consistent date formatting.
+- Verified numeric fields such as `Sales`, `Quantity`, `Discount`, and `Profit`.
+- Retained table filters to support data validation and analysis.
+- Prepared the cleaned dataset for lookup formulas, calculated fields, PivotTables, and dashboard development.
+
+![Checkpoint 1 - Data Cleaning](./screenshots/checkpoint-01-data-cleaning.jpeg)
+
+</details>
+
+---
+
+<details>
+<summary><strong>Checkpoint 2 — PivotTables for Business Questions</strong></summary>
+
+### PivotTable Analysis
+
+Multiple PivotTables were created to answer specific sales, profit, order, and trend-related business questions.
+
+#### Sales Analysis
+
+- Technology generated the highest category sales with **842,456.96**.
+- New York City recorded the highest city-level sales with **256,368.16**.
+- The West region generated the highest regional sales with **739,879.80**.
+- The Consumer segment recorded the highest segment sales with **1,174,198.71**.
+- Canon imageCLASS 2200 Advanced Copier generated the highest product sales with **61,599.82**.
+
+#### Profit Analysis
+
+- Technology generated the highest category profit with **147,310.81**.
+- New York City recorded the highest city-level profit with **62,036.98**.
+- The West region generated the highest regional profit with **110,815.31**.
+- The Consumer segment recorded the highest segment profit with **137,357.33**.
+
+#### Order and Trend Analysis
+
+- Staples recorded the highest order count with **60 orders**.
+- Sales performance was summarized by year from 2023 to 2026.
+- Year-over-year sales growth was calculated to compare annual performance.
+
+![Checkpoint 2 - PivotTables](./screenshots/checkpoint-02-pivot-tables.jpeg)
+
+</details>
+
+---
+
+<details>
+<summary><strong>Checkpoint 3 — Lookup Formulas</strong></summary>
+
+### Lookup Formulas Applied
+
+Three lookup approaches were used to retrieve related information from the `People` and `Products` worksheets:
+
+- `XLOOKUP` matched each region with the corresponding regional manager.
+- `VLOOKUP` matched Product IDs with supplier information.
+- `INDEX` and `MATCH` returned the target margin for each Product ID.
+
+These formulas added the `Regional Manager`, `Supplier`, and `Target Margin` fields to the `Orders` dataset.
+
+![Checkpoint 3 - Lookup Formulas](./screenshots/checkpoint-03-lookup-formulas.jpeg)
+
+</details>
+
+---
+
+<details>
+<summary><strong>Checkpoint 4 — Calculated Fields</strong></summary>
+
+### Calculated Fields Created
+
+Aggregation and logical formulas were used to create additional analytical fields:
+
+- `SUMIFS` calculated sales based on multiple conditions.
+- `COUNTIFS` counted records matching the selected criteria.
+- `IF` classified sales values as `Yüksək Satış` or `Aşağı Satış`.
+- Nested `IF` classified records as `VIP`, `Special`, `Formal`, or `Normal`.
+- `IFS` evaluated discount and product quantity conditions.
+- `ROUND` limited adjusted discount values to two decimal places.
+
+![Checkpoint 4 - Calculated Fields](./screenshots/checkpoint-04-calculated-fields.jpeg)
+
+</details>
+
+---
+
+<details>
+<summary><strong>Checkpoint 5 — Dashboard and Conditional Formatting</strong></summary>
+
+### Interactive Sales Dashboard
+
+An interactive Excel dashboard was developed with four summary KPI cards:
+
+- Total Sales: **2,330,130.06**
+- Total Quantity: **38,680**
+- Average Sales: **228.40**
+- Total Orders: **10,203**
+
+The dashboard includes:
+
+- Monthly and yearly sales trend line chart
+- Regional sales pie chart
+- Category sales column chart
+- Country/Region slicer
+- Ship Date timeline
+
+![Checkpoint 5 - Dashboard](./screenshots/checkpoint-05-dashboard.jpeg)
+
+### Conditional Formatting
+
+Conditional formatting was applied to the `Sales` column:
+
+- Sales values greater than **500** are highlighted in green.
+- Sales values below **500** are highlighted in light red.
+
+This formatting makes higher and lower sales values easier to identify.
+
+![Checkpoint 5 - Conditional Formatting](./screenshots/checkpoint-05-conditional-formatting.jpeg)
+
+</details>
+
+---
+
+<details>
+<summary><strong>Checkpoint 6 — Formula Documentation</strong></summary>
+
+### Formula and PivotTable Documentation
+
+A separate documentation file was created to explain:
+
+- Lookup formulas
+- Aggregation formulas
+- Logical formulas
+- Dashboard calculations
+- PivotTable configuration
+- Main PivotTable findings
+
+📖 [Open the Excel formula and PivotTable documentation](./formula-documentation.md)
+
+</details>
+
+---
+
+
 ## ✅ Status
 
 **Week 2 completed.**
