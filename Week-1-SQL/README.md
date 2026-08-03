@@ -48,8 +48,9 @@ The SQL queries were prepared to examine topics such as:
 | File | Description |
 |---|---|
 | `README.md` | Overview of the Week 1 SQL work |
-| `queries.sql` | Completed SQL queries organized by checkpoint |
-| `screenshots/` | Supporting query-result screenshots, when required |
+| `queries.sql` | Completed SQL queries with checkpoint explanations |
+| `northwind.db` | Northwind SQLite database used for the SQL queries |
+| `screenshots/` | Screenshots showing the executed queries and their results |
 
 ---
 
