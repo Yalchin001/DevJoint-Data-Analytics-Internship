@@ -213,7 +213,7 @@ Aggregation and logical formulas were used to create additional analytical field
 - `IFS` evaluated discount and product quantity conditions.
 - `ROUND` limited adjusted discount values to two decimal places.
 
-![Checkpoint 4 - Calculated Fields](./screenshots/checkpoint-04-calculated-fields.jpeg)
+![Checkpoint 4 - Calculated Fields](./screenshots/checkpoint-04-logical-formulas.jpeg)
 
 </details>
 
