@@ -66,7 +66,7 @@ The first week focused on querying the Northwind database and answering business
 ### Main Topics
 
 - `SELECT`, `WHERE`, `ORDER BY`, and `LIMIT`
-- `LEFT JOIN`, `INNER JOIN`, and `SELF-JOIN`
+- `LEFT JOIN`, `INNER JOIN`, and `SELF JOIN`
 - `GROUP BY`, `HAVING`, and aggregate functions
 - Common Table Expressions and subqueries
 - Window functions
