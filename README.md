@@ -18,7 +18,7 @@ The main objective of this internship is to apply data analytics tools to practi
 |---|---|---|---|
 | 1 | [SQL with SQLite](./Week-1-SQL/) | SQL queries, explanations, and result screenshots | ✅ Completed |
 | 2 | [Excel Data Analysis](./Week-2-Excel/) | Data cleaning, formulas, PivotTables, and dashboard | ✅ Completed |
-| 3 | Power BI Dashboard | Data model, DAX measures, KPIs, and interactive dashboard | ✅ Completed |
+| 3 | [Power BI Dashboard](./Week-3-Power-BI/) | Data model, DAX measures, KPIs, and interactive dashboard | ✅ Completed |
 | 4 | Business Case Analysis | Business findings, recommendations, and final report | ⏳ Upcoming |
 
 ---
