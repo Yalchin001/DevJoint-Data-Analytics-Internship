@@ -1,5 +1,7 @@
 # 📊 Week 3 — Power BI Dashboard
 
+[Week 3 - Power BI](./Week-3-Power-BI/)
+
 This week focused on building an interactive Sales Performance Dashboard in Power BI using multiple related datasets.
 
 ## 🎯 Key Objectives
