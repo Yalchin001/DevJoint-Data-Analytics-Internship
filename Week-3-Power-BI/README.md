@@ -35,6 +35,8 @@ The analysis includes measures for:
 
 The complete formulas are available in `dax-measures.md`.
 
+![DAX Measure](screenshots/04-dax-measure.png)
+
 ## 📈 Dashboard Visuals
 
 Four different visualization types were selected based on the analytical purpose:
