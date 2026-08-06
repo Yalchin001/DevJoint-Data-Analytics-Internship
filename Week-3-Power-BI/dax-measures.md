@@ -1,5 +1,8 @@
-# DAX Measures
+# 🧮 DAX Measures
 
+The following DAX measures were created for the Power BI Sales Performance Dashboard.
+
+```DAX
 Total Sales =
 SUM(FactSales[SalesAmount])
 
@@ -24,3 +27,4 @@ DIVIDE(
     [Previous Year Sales],
     0
 )
+```
