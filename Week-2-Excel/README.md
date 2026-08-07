@@ -2,26 +2,22 @@
 
 During Week 2 of my DevJoint Data Analytics Internship, I worked with the Superstore sales dataset in Microsoft Excel.
 
-I started by checking and cleaning the provided data. After preparing the worksheets, I used PivotTables to analyze the main business indicators, applied lookup and logical formulas, and finished the project by creating an interactive Excel dashboard.
+I started by cleaning and checking the provided data. After preparing the worksheets, I used PivotTables to analyze the main business indicators, applied lookup and logical formulas, and finished the project by creating an interactive Excel dashboard.
 
 📥 [Download the completed Excel workbook](./superstore-sales-analysis.xlsx)
 
 ---
 
-<details>
+## Checkpoint 1 — Data Cleaning and Preparation
 
-  
-<summary><strong>Checkpoint 1 — Data Cleaning</strong></summary>
+<details>
+<summary><strong>checkpoint-01-data-cleaning</strong></summary>
 
 ### Data Cleaning and Preparation
 
-
-![Checkpoint 1 — Data Cleaning](screenshots/checkpoint-01-data-cleaning.jpeg)
+![Data Cleaning and Preparation](./screenshots/checkpoint-01-data-cleaning.jpeg)
 
 </details>
-
-
-## Checkpoint 1 — Data Cleaning and Preparation
 
 I started by reviewing the `Orders`, `People`, `Products`, and `Returns` worksheets.
 
@@ -36,6 +32,15 @@ Repeated values were also reviewed. They belonged to different orders rather tha
 ---
 
 ## Checkpoint 2 — PivotTable Analysis
+
+<details>
+<summary><strong>checkpoint-02-pivot-tables</strong></summary>
+
+### PivotTable Analysis
+
+![PivotTable Analysis](./screenshots/checkpoint-02-pivot-tables.jpeg)
+
+</details>
 
 After cleaning the data, I created PivotTables to analyze sales, profit, order counts, and yearly performance.
 
@@ -64,11 +69,18 @@ Staples had the highest order count with **60 orders**.
 
 I also summarized sales by year from 2023 to 2026 and calculated year-over-year growth to compare sales performance between years.
 
-![Checkpoint 2 - PivotTable Analysis](./screenshots/02-pivottable-analysis.png)
-
 ---
 
 ## Checkpoint 3 — Lookup Formulas
+
+<details>
+<summary><strong>checkpoint-03-lookup-formulas</strong></summary>
+
+### Lookup Formulas
+
+![Lookup Formulas](./screenshots/checkpoint-03-lookup-formulas.jpeg)
+
+</details>
 
 In this checkpoint, I used different lookup methods to bring related information from the reference worksheets into the main `Orders` data.
 
@@ -80,11 +92,18 @@ I used:
 
 After applying these formulas, the `Regional Manager`, `Supplier`, and `Target Margin` fields were available in the main dataset.
 
-![Checkpoint 3 - Lookup Formulas](./screenshots/03-lookup-formulas.png)
-
 ---
 
 ## Checkpoint 4 — Calculated Fields
+
+<details>
+<summary><strong>checkpoint-04-logical-formulas</strong></summary>
+
+### Calculated Fields
+
+![Calculated Fields](./screenshots/checkpoint-04-logical-formulas.jpeg)
+
+</details>
 
 Next, I created additional fields using aggregation and logical formulas.
 
@@ -99,11 +118,18 @@ I used:
 
 I kept these calculations in the `Hesablanan Sahələr(IF,IFS və s)` worksheet so they could be reviewed separately from the original data.
 
-![Checkpoint 4 - Calculated Fields](./screenshots/04-calculated-fields.png)
-
 ---
 
 ## Checkpoint 5 — Interactive Sales Dashboard
+
+<details>
+<summary><strong>checkpoint-05-dashboard</strong></summary>
+
+### Interactive Sales Dashboard
+
+![Interactive Sales Dashboard](./screenshots/checkpoint-05-dashboard.jpeg)
+
+</details>
 
 After completing the analysis, I used the PivotTable results to build an interactive Excel dashboard.
 
@@ -124,11 +150,18 @@ The dashboard also includes:
 
 The slicer and timeline allow me to filter the dashboard and see how the results change for different selections.
 
-![Checkpoint 5 - Sales Dashboard](./screenshots/05-sales-dashboard.png)
-
 ---
 
 ## Checkpoint 6 — Conditional Formatting
+
+<details>
+<summary><strong>checkpoint-05-conditional-formatting</strong></summary>
+
+### Conditional Formatting
+
+![Conditional Formatting](./screenshots/checkpoint-05-conditional-formatting.jpeg)
+
+</details>
 
 For the final checkpoint, I applied conditional formatting to the `Sales` column.
 
@@ -138,8 +171,6 @@ I used two simple rules:
 - Sales values below **500** are highlighted in light red.
 
 This made it easier to visually separate higher and lower sales values when reviewing the data.
-
-![Checkpoint 6 - Conditional Formatting](./screenshots/06-conditional-formatting.png)
 
 ---
 
@@ -159,7 +190,7 @@ This made it easier to visually separate higher and lower sales values when revi
 
 ## Formula and PivotTable Documentation
 
-I kept the detailed formula and PivotTable notes in a separate file so the calculations can be reviewed without making this README too long.
+The formulas and PivotTable settings used during the analysis are documented separately.
 
 📖 [Open the Excel formula and PivotTable documentation](./formula-documentation.md)
 
@@ -169,10 +200,10 @@ I kept the detailed formula and PivotTable notes in a separate file so the calcu
 
 - [Completed Excel Workbook](./superstore-sales-analysis.xlsx)
 - [Formula and PivotTable Documentation](./formula-documentation.md)
-- `screenshots/` — screenshots from each completed checkpoint
+- `screenshots/` — screenshots from the six completed checkpoints
 
 ---
 
-This week helped me practice the full Excel analysis process: preparing the data, using formulas, analyzing the results with PivotTables, and presenting the main findings in a dashboard.
+**Week 2 completed.**
 
 **Yalchin Hasanov**
