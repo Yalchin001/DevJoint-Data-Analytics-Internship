@@ -54,7 +54,14 @@ Staples had the highest order count with **60 orders**.
 
 I also summarized sales by year from 2023 to 2026 and calculated year-over-year growth to compare sales performance between years.
 
-![Checkpoint 2 - PivotTable Analysis](./screenshots/02-pivottable-analysis.png)
+<details>
+ 
+<summary><strong>Checkpoint 1 — Data Cleaning</strong></summary>
+
+![Checkpoint 1 — Data Cleaning](screenshots/checkpoint-01-data-cleaning.jpeg)
+
+</details>
+
 
 ---
 
