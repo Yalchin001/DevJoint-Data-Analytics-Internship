@@ -1,289 +1,135 @@
-# 📊 Week 2: Excel Data Analysis
+# Week 2 — Excel Data Analysis
 
-## 📌 Overview
+During Week 2 of my DevJoint Data Analytics Internship, I worked with the Superstore sales dataset in Microsoft Excel.
 
-This folder contains the work completed during Week 2 of the DevJoint Data Analytics Internship.
-
-The main objective was to analyze the Superstore sales dataset using Microsoft Excel, apply lookup and logical formulas, create PivotTable-based business summaries, and develop an interactive sales dashboard.
-
----
-
-## 🛠️ Excel Techniques Applied
-
-- Data cleaning and formatting
-- `XLOOKUP`
-- `VLOOKUP`
-- `INDEX` and `MATCH`
-- `SUMIFS` and `COUNTIFS`
-- `IF`, `IFS`, and nested `IF`
-- PivotTables
-- PivotCharts
-- Slicers and timeline filters
-- Summary KPI cards
-- Dashboard design
-
----
-
-## 🔍 Work Completed
-
-- Organized and prepared the Superstore sales data for analysis.
-- Retrieved related information from the People and Products worksheets using lookup formulas.
-- Created calculated fields using conditional and aggregation formulas.
-- Prepared PivotTables to summarize key business indicators.
-- Created four summary KPI cards: Total Sales, Total Quantity, Average Sales, and Total Orders.
-- Analyzed monthly and yearly sales trends.
-- Compared sales performance by region and product category.
-- Added a Country/Region slicer and Ship Date timeline for interactive filtering.
-- Developed an interactive Superstore Sales Dashboard.
-
----
-
-## 📈 Dashboard Components
-
-The Excel dashboard includes:
-
-- **Total Sales**
-- **Total Quantity**
-- **Average Sales**
-- **Total Orders**
-- **Monthly and Yearly Sales Trend**
-- **Sales by Region**
-- **Sales by Category**
-- **Country/Region Slicer**
-- **Ship Date Timeline**
-
----
-
-## 📂 Workbook Structure
-
-| Worksheet | Description |
-|---|---|
-| `Biznes Göstəriciləri(Pivot)` | PivotTable-based business metrics and summaries |
-| `Superstore Sales Dashboard` | Interactive sales dashboard and summary KPI cards |
-| `Orders` | Main sales transaction dataset and lookup results |
-| `Hesablanan Sahələr(IF,IFS və s)` | Calculated fields created with logical and aggregation formulas |
-| `People` | Regional personnel reference data |
-| `Products` | Product reference data |
-| `Returns` | Returned order information |
-
----
-
-## 📁 Repository Files
-
-| File | Description |
-|---|---|
-| `README.md` | Overview and documentation of the Week 2 Excel project |
-| `superstore-sales-analysis.xlsx` | Completed Excel analysis and interactive dashboard |
-| `screenshots/` | Supporting screenshots of the completed checkpoints and dashboard |
-
----
-
-## 🧰 Tools Used
-
-- Microsoft Excel
-- Excel formulas
-- PivotTables
-- PivotCharts
-- Slicers
-- Timeline filters
-
-
----
-
-## 📸 Checkpoint Evidence
-
-The following sections document the six Week 2 checkpoints completed during the Excel analysis.
+I started by cleaning and checking the provided worksheets, then used lookup and logical formulas to add new information to the Orders data. After that, I used PivotTables to analyze sales and profit performance and built an interactive dashboard to summarize the main results.
 
 📥 [Download the completed Excel workbook](./superstore-sales-analysis.xlsx)
 
 ---
 
-<details>
-<summary><strong>Checkpoint 1 — Data Cleaning</strong></summary>
+## 1. Data Cleaning and Preparation
 
-### 🧹 Data Cleaning and Preparation
+I first reviewed the `Orders`, `People`, `Products`, and `Returns` worksheets before starting the analysis.
 
-The `Orders`, `People`, `Products`, and `Returns` worksheets were reviewed and prepared for analysis.
+For blank rows, I used `ISBLANK` and filtered the result by `FALSE` to keep populated records. I then copied only the visible cells to a clean worksheet.
 
-#### 1. Blank Row Handling
+I also checked the data types. Some date values in `Order Date` were stored incorrectly, so I converted them using `Text to Columns`. To make sure the conversion worked, I tested the values with `ISTEXT`. The result was `FALSE`, confirming that the dates were no longer stored as text.
 
-- Used the `ISBLANK` function to identify blank and non-blank cells.
-- Filtered the results by `FALSE` to retain the populated records.
-- Selected the filtered data using `Home > Find & Select > Go To Special > Visible Cells Only`.
-- Copied the visible records to a new worksheet.
-- After validating the copied data, the new worksheet was renamed using the original worksheet name and the previous worksheet was removed.
+The `Target Margin` column in the `Products` worksheet had a similar issue. I checked it with `ISNUMBER`, converted the values to numbers, and then applied percentage formatting.
 
-#### 2. Data Type Conversion and Validation
-
-- Converted date fields to the `Date` data type and numeric fields to the `Number` data type.
-- Converted the `Order Date` values using `Data > Data Tools > Text to Columns > Delimited`.
-- Created a temporary validation column using the `ISTEXT` function.
-- The function returned `FALSE` for all checked values, confirming that the dates were no longer stored as text.
-- Removed the temporary validation column after completing the check.
-
-#### 3. Target Margin Conversion
-
-- Reviewed the `Target Margin` column in the `Products` worksheet.
-- Used the `ISNUMBER` function to check whether the values were stored as numbers.
-- The function returned `FALSE`, confirming that the values were initially stored as text.
-- Converted the column using `Data > Data Tools > Text to Columns > Delimited`.
-- Applied the `Percentage` number format after the conversion.
-
-#### 4. Formatting Standardization
-
-- Standardized the data types across all four worksheets.
-- Changed the worksheet font to `Arial` for consistent presentation.
-
-#### 5. Duplicate Review
-
-Repeated values were found in individual columns; however, they belonged to different orders and distinct records. They were not complete duplicate rows.
-
-No valid records were removed because deleting these repeated values would cause data loss and could affect the accuracy of the final analysis.
-
-![Checkpoint 1 — Data Cleaning](screenshots/checkpoint-01-data-cleaning.jpeg)
-
-</details>
+I also reviewed repeated values in the dataset. These belonged to different orders and were not complete duplicate rows, so I kept them to avoid losing valid data.
 
 ---
 
-<details>
-<summary><strong>Checkpoint 2 — PivotTables for Business Questions</strong></summary>
+## 2. Lookup Formulas
 
-### PivotTable Analysis
+After preparing the data, I used three lookup methods to bring additional information into the `Orders` worksheet.
 
-Multiple PivotTables were created to answer specific sales, profit, order, and trend-related business questions.
+- `XLOOKUP` — matched each region with its Regional Manager.
+- `VLOOKUP` — matched Product IDs with Supplier information.
+- `INDEX` + `MATCH` — returned the Target Margin for each Product ID.
 
-#### Sales Analysis
-
-- Technology generated the highest category sales with **842,456.96**.
-- New York City recorded the highest city-level sales with **256,368.16**.
-- The West region generated the highest regional sales with **739,879.80**.
-- The Consumer segment recorded the highest segment sales with **1,174,198.71**.
-- Canon imageCLASS 2200 Advanced Copier generated the highest product sales with **61,599.82**.
-
-#### Profit Analysis
-
-- Technology generated the highest category profit with **147,310.81**.
-- New York City recorded the highest city-level profit with **62,036.98**.
-- The West region generated the highest regional profit with **110,815.31**.
-- The Consumer segment recorded the highest segment profit with **137,357.33**.
-
-#### Order and Trend Analysis
-
-- Staples recorded the highest order count with **60 orders**.
-- Sales performance was summarized by year from 2023 to 2026.
-- Year-over-year sales growth was calculated to compare annual performance.
-
-![Checkpoint 2 - PivotTables](./screenshots/checkpoint-02-pivot-tables.jpeg)
-
-</details>
+This added the `Regional Manager`, `Supplier`, and `Target Margin` fields to the main dataset.
 
 ---
 
-<details>
-<summary><strong>Checkpoint 3 — Lookup Formulas</strong></summary>
+## 3. Calculated Fields
 
-### Lookup Formulas Applied
+I created several additional fields to practice working with aggregation and logical formulas.
 
-Three lookup approaches were used to retrieve related information from the `People` and `Products` worksheets:
+- `SUMIFS` — calculated sales using multiple conditions.
+- `COUNTIFS` — counted records that matched selected conditions.
+- `IF` — classified sales as `Yüksək Satış` or `Aşağı Satış`.
+- Nested `IF` — grouped records as `VIP`, `Special`, `Formal`, or `Normal`.
+- `IFS` — evaluated discount and product quantity conditions.
+- `ROUND` — limited adjusted discount values to two decimal places.
 
-- `XLOOKUP` matched each region with the corresponding regional manager.
-- `VLOOKUP` matched Product IDs with supplier information.
-- `INDEX` and `MATCH` returned the target margin for each Product ID.
-
-These formulas added the `Regional Manager`, `Supplier`, and `Target Margin` fields to the `Orders` dataset.
-
-![Checkpoint 3 - Lookup Formulas](./screenshots/checkpoint-03-lookup-formulas.jpeg)
-
-</details>
+These calculations were kept in the `Hesablanan Sahələr(IF,IFS və s)` worksheet.
 
 ---
 
-<details>
-<summary><strong>Checkpoint 4 — Calculated Fields</strong></summary>
+## 4. PivotTable Analysis
 
-### Calculated Fields Created
+I used PivotTables to compare sales, profit, orders, and yearly performance from different perspectives.
 
-Aggregation and logical formulas were used to create additional analytical fields:
+Some of the main results were:
 
-- `SUMIFS` calculated sales based on multiple conditions.
-- `COUNTIFS` counted records matching the selected criteria.
-- `IF` classified sales values as `Yüksək Satış` or `Aşağı Satış`.
-- Nested `IF` classified records as `VIP`, `Special`, `Formal`, or `Normal`.
-- `IFS` evaluated discount and product quantity conditions.
-- `ROUND` limited adjusted discount values to two decimal places.
+### Sales
 
-![Checkpoint 4 - Calculated Fields](./screenshots/checkpoint-04-logical-formulas.jpeg)
+- Technology had the highest category sales: **842,456.96**
+- New York City had the highest city-level sales: **256,368.16**
+- West was the highest-performing region by sales: **739,879.80**
+- Consumer was the highest-performing segment: **1,174,198.71**
+- Canon imageCLASS 2200 Advanced Copier had the highest product sales: **61,599.82**
 
-</details>
+### Profit
+
+- Technology had the highest category profit: **147,310.81**
+- New York City had the highest city-level profit: **62,036.98**
+- West had the highest regional profit: **110,815.31**
+- Consumer had the highest segment profit: **137,357.33**
+
+For order analysis, Staples had the highest order count with **60 orders**.
+
+I also summarized sales by year from 2023 to 2026 and calculated year-over-year growth to compare annual performance.
 
 ---
 
-<details>
-<summary><strong>Checkpoint 5 — Dashboard and Conditional Formatting</strong></summary>
+## 5. Excel Dashboard
 
-### Interactive Sales Dashboard
+After completing the PivotTable analysis, I used the results to build an interactive sales dashboard.
 
-An interactive Excel dashboard was developed with four summary KPI cards:
+The four KPI cards show:
 
-- Total Sales: **2,330,130.06**
-- Total Quantity: **38,680**
-- Average Sales: **228.40**
-- Total Orders: **10,203**
+- **Total Sales:** 2,330,130.06
+- **Total Quantity:** 38,680
+- **Average Sales:** 228.40
+- **Total Orders:** 10,203
 
-The dashboard includes:
+The dashboard also contains:
 
-- Monthly and yearly sales trend line chart
-- Regional sales pie chart
-- Category sales column chart
+- Monthly and yearly sales trend
+- Sales by region
+- Sales by category
 - Country/Region slicer
 - Ship Date timeline
 
-![Checkpoint 5 - Dashboard](./screenshots/checkpoint-05-dashboard.jpeg)
-
-### Conditional Formatting
-
-Conditional formatting was applied to the `Sales` column:
-
-- Sales values greater than **500** are highlighted in green.
-- Sales values below **500** are highlighted in light red.
-
-This formatting makes higher and lower sales values easier to identify.
-
-![Checkpoint 5 - Conditional Formatting](./screenshots/checkpoint-05-conditional-formatting.jpeg)
-
-</details>
+The slicer and timeline allow the dashboard results to change based on the selected filters.
 
 ---
 
-<details>
-<summary><strong>Checkpoint 6 — Formula Documentation</strong></summary>
+## 6. Conditional Formatting
 
-### Formula and PivotTable Documentation
+I applied conditional formatting to the `Sales` column to make high and low sales values easier to identify.
 
-A separate documentation file was created to explain:
-
-- Lookup formulas
-- Aggregation formulas
-- Logical formulas
-- Dashboard calculations
-- PivotTable configuration
-- Main PivotTable findings
-
-📖 [Open the Excel formula and PivotTable documentation](./formula-documentation.md)
-
-</details>
+- Sales above **500** → green
+- Sales below **500** → light red
 
 ---
 
+## Workbook Structure
 
-## ✅ Status
-
-**Week 2 completed.**
+| Worksheet | What I used it for |
+|---|---|
+| `Orders` | Main sales data and lookup results |
+| `People` | Regional manager information |
+| `Products` | Product and target margin information |
+| `Returns` | Returned order data |
+| `Hesablanan Sahələr(IF,IFS və s)` | Formula-based calculated fields |
+| `Biznes Göstəriciləri(Pivot)` | PivotTable analysis |
+| `Superstore Sales Dashboard` | KPI cards, charts, slicers, and timeline |
 
 ---
 
-## 👤 Author
+## Project Files
 
-**Yalchin Hasanov**  
-Junior Data Analyst
+- [Completed Excel Workbook](./superstore-sales-analysis.xlsx)
+- [Formula and PivotTable Documentation](./formula-documentation.md)
+- `screenshots/` — screenshots from the completed analysis and dashboard
+
+---
+
+Week 2 gave me practical experience in taking an Excel dataset from the cleaning stage to analysis and finally presenting the results in an interactive dashboard.
+
+**Yalchin Hasanov**
