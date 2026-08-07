@@ -179,3 +179,18 @@ I kept the detailed formula and PivotTable notes in a separate file so the calcu
 This week helped me practice the full Excel analysis process: preparing the data, using formulas, analyzing the results with PivotTables, and presenting the main findings in a dashboard.
 
 **Yalchin Hasanov**
+
+
+
+<details>
+
+  
+<summary><strong>Checkpoint 1 — Data Cleaning</strong></summary>
+
+### Data Cleaning and Preparation
+
+
+![Checkpoint 1 — Data Cleaning](screenshots/checkpoint-01-data-cleaning.jpeg)
+
+</details>
+
