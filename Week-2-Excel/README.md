@@ -8,6 +8,19 @@ I started by checking and cleaning the provided data. After preparing the worksh
 
 ---
 
+<details>
+
+  
+<summary><strong>Checkpoint 1 — Data Cleaning</strong></summary>
+
+### Data Cleaning and Preparation
+
+
+![Checkpoint 1 — Data Cleaning](screenshots/checkpoint-01-data-cleaning.jpeg)
+
+</details>
+
+
 ## Checkpoint 1 — Data Cleaning and Preparation
 
 I started by reviewing the `Orders`, `People`, `Products`, and `Returns` worksheets.
@@ -19,9 +32,6 @@ Some values in the `Order Date` column were stored incorrectly. I converted them
 I also checked the `Target Margin` column in the `Products` worksheet with `ISNUMBER`. Since the values were initially stored as text, I converted them to numbers and applied percentage formatting.
 
 Repeated values were also reviewed. They belonged to different orders rather than complete duplicate rows, so I kept them to avoid removing valid data.
-
-![Checkpoint 1 — Data Cleaning](screenshots/checkpoint-01-data-cleaning.jpeg)
-
 
 ---
 
@@ -54,20 +64,7 @@ Staples had the highest order count with **60 orders**.
 
 I also summarized sales by year from 2023 to 2026 and calculated year-over-year growth to compare sales performance between years.
 
-
-<details>
-
-
-<summary><strong>Checkpoint 1 — Data Cleaning</strong></summary>
-
-### Data Cleaning and Preparation
-
-
-![Checkpoint 1 — Data Cleaning](screenshots/checkpoint-01-data-cleaning.jpeg)
-
-</details>
-
-
+![Checkpoint 2 - PivotTable Analysis](./screenshots/02-pivottable-analysis.png)
 
 ---
 
@@ -179,18 +176,3 @@ I kept the detailed formula and PivotTable notes in a separate file so the calcu
 This week helped me practice the full Excel analysis process: preparing the data, using formulas, analyzing the results with PivotTables, and presenting the main findings in a dashboard.
 
 **Yalchin Hasanov**
-
-
-
-<details>
-
-  
-<summary><strong>Checkpoint 1 — Data Cleaning</strong></summary>
-
-### Data Cleaning and Preparation
-
-
-![Checkpoint 1 — Data Cleaning](screenshots/checkpoint-01-data-cleaning.jpeg)
-
-</details>
-
