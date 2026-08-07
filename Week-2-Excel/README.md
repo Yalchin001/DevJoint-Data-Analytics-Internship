@@ -20,7 +20,8 @@ I also checked the `Target Margin` column in the `Products` worksheet with `ISNU
 
 Repeated values were also reviewed. They belonged to different orders rather than complete duplicate rows, so I kept them to avoid removing valid data.
 
-![Checkpoint 1 - Data Cleaning](./screenshots/01-data-cleaning.png)
+![Checkpoint 1 — Data Cleaning](screenshots/checkpoint-01-data-cleaning.jpeg)
+
 
 ---
 
