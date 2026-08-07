@@ -20,6 +20,8 @@ The `Target Margin` column in the `Products` worksheet had a similar issue. I ch
 
 I also reviewed repeated values in the dataset. These belonged to different orders and were not complete duplicate rows, so I kept them to avoid losing valid data.
 
+![Checkpoint 1 — Data Cleaning](screenshots/checkpoint-01-data-cleaning.jpeg)
+
 ---
 
 ## 2. Lookup Formulas
