@@ -4,16 +4,20 @@
 
 ### Business Question
 
-Why did cost per acquisition increase in July–December 2025 compared with the same months in 2024, and which channels or campaigns should be optimized without reducing revenue?
+How did marketing results change from July–December 2024 to the same period in 2025, and which channels or campaigns had the biggest effect on the results?
 
 ### Selected KPIs
 
-- **CPA — Cost per Acquisition:** Shows how much marketing spend is required for one conversion.
-- **ROAS — Return on Ad Spend:** Measures how much revenue is generated from marketing spend.
-- **Conversion Rate:** Shows how effectively sessions are converted into conversions.
-- **Revenue:** Measures the final financial result of the marketing activity.
-- **Sessions:** Helps determine whether the issue is related to traffic volume or conversion efficiency.
+I selected five KPIs for this analysis:
+
+* **CPA:** Shows the average cost of one conversion.
+* **ROAS:** Compares revenue with marketing spend.
+* **Conversion Rate:** Shows how many sessions resulted in conversions.
+* **Revenue:** Shows the income generated from marketing activities.
+* **Sessions:** Shows the amount of website traffic.
+
+I will use these KPIs to compare costs, revenue, traffic and conversions.
 
 ### Comparison Approach
 
-I will compare July–December 2025 with July–December 2024. Both periods contain the same months, so seasonal effects such as November and December peaks are less likely to be confused with the main cause.
+I will compare the same months in 2024 and 2025. This helps me consider seasonal changes in November and December.
