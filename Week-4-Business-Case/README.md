@@ -95,3 +95,9 @@ At campaign level, SEM Brand had the largest CPA increase, from 10.76 to 11.13. 
 ### Recommendation
 
 The first step should be to review the Social Prospecting campaign. A small part of its budget can be tested in Social Retargeting, which had a lower CPA of 10.77 and a higher ROAS of 4.36 in 2025. Revenue should be monitored during the test.
+
+## Checkpoint 6 — Actionable Recommendation
+
+Social Prospecting had a CPA of 11.31 and a ROAS of 4.18 in 2025. Social Retargeting had a lower CPA of 10.77 and a higher ROAS of 4.36.
+
+I recommend moving 10% of the Social Prospecting budget to Social Retargeting for a one-month test. At the end of the test, CPA, ROAS and Revenue should be compared. The change can be continued if CPA improves without reducing Revenue.
