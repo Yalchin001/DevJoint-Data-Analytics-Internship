@@ -44,3 +44,17 @@ I wrote six SQL queries for the analysis:
 The queries use `SUM`, `ROUND`, `WHERE`, `BETWEEN`, `GROUP BY`, `ORDER BY` and a simple `JOIN`.
 
 [View the SQL analysis](./week4_marketing_analysis.sql)
+
+## Checkpoint 3 — Root Cause Analysis
+
+### Overall Result
+
+I first compared the overall results for 2024 and 2025. Sessions stayed almost the same, while revenue increased from 5.93 million to 6.60 million. ROAS increased from 13.90 to 14.39 and Conversion Rate increased from 5.71% to 5.95%.
+
+The main negative change was CPA. It increased from 3.86 to 3.98, which means the average cost of a conversion became higher.
+
+### Channel and Campaign Findings
+
+Paid Social had the lowest ROAS at 4.27 and the lowest Conversion Rate at 3.18%. Paid Search had the highest channel-level CPA at 11.15.
+
+Inside Paid Social, `Social_Prospecting` had a CPA of 11.31, a ROAS of 4.18 and a Conversion Rate of 3.10%. These results were weaker than `Social_Retargeting`, so `Social_Prospecting` appears to be the weakest campaign in the analysis.
