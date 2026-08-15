@@ -61,3 +61,20 @@ CPA increased in all channels. The largest channel-level increase was in Paid Se
 At campaign level, SEM_Brand had the largest CPA increase, from 10.76 to 11.13. Social_Prospecting had the weakest results in 2025, with a CPA of 11.31, a ROAS of 4.18 and a Conversion Rate of 3.10%.
 
 The comparison shows that Paid Search had the largest CPA increase, while Paid Social and Social_Prospecting had the weakest efficiency results.
+
+## Checkpoint 4 — Narrative Visualization
+
+I created a Power BI page with two charts to show the CPA change.
+
+The monthly line chart compares CPA from July to December in 2024 and 2025. CPA was higher in every month of 2025 and reached its highest level in December at 4.79.
+
+The campaign chart compares the four paid campaigns. SEM Brand had the largest CPA increase, from 10.76 to 11.13. Social Prospecting had the highest CPA in 2025 at 11.31.
+
+I used blue for 2024 and orange for 2025. I also added a Region slicer to check the results for different regions.
+
+### Power BI Visualization
+
+![Checkpoint 4 Marketing Visualization](checkpoint4_marketing_visualization.png)
+
+[View or download the Power BI file](week4_marketing_visualization.pbix)
+
