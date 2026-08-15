@@ -80,3 +80,23 @@ JOIN campaigns
 WHERE marketing_events.date BETWEEN '2025-07-01' AND '2025-12-31'
 GROUP BY campaigns.campaign_name, marketing_events.channel
 ORDER BY roas DESC;
+
+-- Query 7: KPIs by campaign for July-December 2024
+
+SELECT
+    campaigns.campaign_name,
+    marketing_events.channel,
+    SUM(marketing_events.sessions) AS sessions,
+    ROUND(SUM(marketing_events.revenue), 2) AS revenue,
+    ROUND(SUM(marketing_events.spend) / SUM(marketing_events.conversions), 2) AS cpa,
+    ROUND(SUM(marketing_events.revenue) / SUM(marketing_events.spend), 2) AS roas,
+    ROUND(
+        SUM(marketing_events.conversions) * 100.0 /
+        SUM(marketing_events.sessions), 2
+    ) AS conversion_rate
+FROM marketing_events
+JOIN campaigns
+    ON marketing_events.campaign_id = campaigns.campaign_id
+WHERE marketing_events.date BETWEEN '2024-07-01' AND '2024-12-31'
+GROUP BY campaigns.campaign_name, marketing_events.channel
+ORDER BY roas DESC;
