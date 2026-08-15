@@ -183,6 +183,7 @@ The repository includes the project files, analysis steps, query and formula doc
 ## Author
 
 **Yalchin Hasanov**
+
 Junior Data Analyst
 
 - [GitHub Profile](https://github.com/Yalchin001)
