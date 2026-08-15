@@ -72,6 +72,12 @@ The campaign chart compares the four paid campaigns. SEM Brand had the largest C
 
 I used blue for 2024 and orange for 2025. I also added a Region slicer to check the results for different regions.
 
+### Power BI Visualization
+
+![Checkpoint 4 Marketing Visualization](checkpoint4_marketing_visualization.png)
+
+[View or download the Power BI file](week4_marketing_visualization.pbix)
+
 ## Checkpoint 5 — Written Summary
 
 ### Overall Situation
@@ -89,10 +95,3 @@ At campaign level, SEM Brand had the largest CPA increase, from 10.76 to 11.13. 
 ### Recommendation
 
 The first step should be to review the Social Prospecting campaign. A small part of its budget can be tested in Social Retargeting, which had a lower CPA of 10.77 and a higher ROAS of 4.36 in 2025. Revenue should be monitored during the test.
-
-### Power BI Visualization
-
-![Checkpoint 4 Marketing Visualization](checkpoint4_marketing_visualization.png)
-
-[View or download the Power BI file](week4_marketing_visualization.pbix)
-
