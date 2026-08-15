@@ -72,6 +72,24 @@ The campaign chart compares the four paid campaigns. SEM Brand had the largest C
 
 I used blue for 2024 and orange for 2025. I also added a Region slicer to check the results for different regions.
 
+## Checkpoint 5 — Written Summary
+
+### Overall Situation
+
+Sessions stayed almost the same in 2024 and 2025. Revenue increased from 5.93 million to 6.60 million, ROAS increased from 13.90 to 14.39 and Conversion Rate increased from 5.71% to 5.95%.
+
+The main negative change was CPA. It increased from 3.86 to 3.98.
+
+### Findings
+
+Paid Search had the largest channel-level CPA increase, from 10.80 to 11.15. Paid Social had the lowest ROAS at 4.27 and the lowest Conversion Rate at 3.18% in 2025.
+
+At campaign level, SEM Brand had the largest CPA increase, from 10.76 to 11.13. Social Prospecting had the highest CPA in 2025 at 11.31.
+
+### Recommendation
+
+The first step should be to review the Social Prospecting campaign. A small part of its budget can be tested in Social Retargeting, which had a lower CPA of 10.77 and a higher ROAS of 4.36 in 2025. Revenue should be monitored during the test.
+
 ### Power BI Visualization
 
 ![Checkpoint 4 Marketing Visualization](checkpoint4_marketing_visualization.png)
