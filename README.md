@@ -1,29 +1,29 @@
-# 📊 DevJoint Data Analytics Internship
+# DevJoint Data Analytics Internship
 
 This repository documents my four-week project-based Data Analytics Internship at DevJoint.
 
-The program covers SQL with SQLite, Excel data analysis, Power BI dashboard development, and business case reporting. Each weekly folder contains the completed project files, explanations, and supporting evidence.
+The program covered SQL with SQLite, Excel data analysis, Power BI dashboard development, and marketing business case analysis. Each weekly folder contains the completed project files, explanations, and supporting evidence.
 
 ---
 
-## 🎯 Program Objective
+## Program Objective
 
-The main objective of this internship is to apply data analytics tools to practical tasks, document the analysis process, and present the completed work in a clear and reviewable GitHub structure.
-
----
-
-## 🗓️ Internship Roadmap
-
-| Week | Module                                   | Main Output                                               | Status      |
-| ---- | ---------------------------------------- | --------------------------------------------------------- | ----------- |
-| 1    | [SQL with SQLite](./Week-1-SQL/)         | SQL queries, explanations, and result screenshots         | ✅ Completed |
-| 2    | [Excel Data Analysis](./Week-2-Excel/)   | Data cleaning, formulas, PivotTables, and dashboard       | ✅ Completed |
-| 3    | [Power BI Dashboard](./Week-3-Power-BI/) | Data model, DAX measures, KPIs, and interactive dashboard | ✅ Completed |
-| 4    | Business Case Analysis                   | Business findings, recommendations, and final report      | ⏳ Upcoming  |
+The objective of this internship was to apply data analytics tools to practical tasks, document the analysis process, and present the completed work in a clear and reviewable GitHub structure.
 
 ---
 
-## 🧰 Tools and Technologies
+## Internship Roadmap
+
+| Week | Module                                            | Main Output                                                        | Status      |
+| ---- | ------------------------------------------------- | ------------------------------------------------------------------ | ----------- |
+| 1    | [SQL with SQLite](./Week-1-SQL/)                  | SQL queries, explanations, and result screenshots                  | ✅ Completed |
+| 2    | [Excel Data Analysis](./Week-2-Excel/)            | Data cleaning, formulas, PivotTables, and dashboard                | ✅ Completed |
+| 3    | [Power BI Dashboard](./Week-3-Power-BI/)          | Data model, DAX measures, KPIs, and interactive dashboard          | ✅ Completed |
+| 4    | [Business Case Analysis](./Week-4-Business-Case/) | SQL analysis, business findings, visualization, and recommendation | ✅ Completed |
+
+---
+
+## Tools and Technologies
 
 * SQLite
 * SQL
@@ -35,9 +35,9 @@ The main objective of this internship is to apply data analytics tools to practi
 
 ---
 
-## 📁 Repository Organization
+## Repository Organization
 
-Each internship week is stored in a separate folder. Every completed weekly folder contains its project files, technical explanations, and supporting evidence.
+Each internship week is stored in a separate folder with its related project files and documentation.
 
 ```text
 DevJoint-Data-Analytics-Internship/
@@ -60,12 +60,19 @@ DevJoint-Data-Analytics-Internship/
 │   ├── dax-measures.md
 │   └── devjoint-week3-powerbi-dashboard.pbix
 │
+├── Week-4-Business-Case/
+│   ├── README.md
+│   ├── checkpoint4_marketing_visualization.png
+│   ├── marketing_dataset_week4.xlsx
+│   ├── week4_marketing_analysis.sql
+│   └── week4_marketing_visualization.pbix
+│
 └── README.md
 ```
 
 ---
 
-## 🔑 Week 1: SQL with SQLite
+## Week 1: SQL with SQLite
 
 The first week focused on querying the Northwind database and answering business-oriented questions using SQL.
 
@@ -78,11 +85,11 @@ The first week focused on querying the Northwind database and answering business
 * Window functions
 * Index creation and query optimization
 
-📁 [View the Week 1 SQL project](./Week-1-SQL/)
+[View the Week 1 SQL project](./Week-1-SQL/)
 
 ---
 
-## 📈 Week 2: Excel Data Analysis
+## Week 2: Excel Data Analysis
 
 The second week focused on cleaning, analyzing, and visualizing the Superstore sales dataset in Microsoft Excel.
 
@@ -96,11 +103,11 @@ The second week focused on cleaning, analyzing, and visualizing the Superstore s
 * Interactive dashboard development
 * Slicers, timeline filters, and conditional formatting
 
-📁 [View the Week 2 Excel project](./Week-2-Excel/)
+[View the Week 2 Excel project](./Week-2-Excel/)
 
 ---
 
-## 📊 Week 3: Power BI Dashboard
+## Week 3: Power BI Dashboard
 
 The third week focused on building an interactive Sales Performance Dashboard in Power BI using multiple related datasets.
 
@@ -125,27 +132,59 @@ The third week focused on building an interactive Sales Performance Dashboard in
 * Treemap — Profit by Subcategory
 * KPI Cards — Total Sales, Sales Target, Target Achievement %, Previous Year Sales, and YoY Growth %
 
-📁 [View the Week 3 Power BI project](./Week-3-Power-BI/)
+[View the Week 3 Power BI project](./Week-3-Power-BI/)
 
 ---
 
-## 📌 Current Progress
+## Week 4: Marketing Business Case Analysis
 
-The first three internship modules have been completed and documented:
+The fourth week focused on analyzing marketing performance for July–December 2024 and the same period in 2025.
+
+I used SQL to compare the overall results and then examined the data by channel, region, and campaign. Based on the findings, I created a Power BI visualization, prepared a written summary, and provided a concrete recommendation.
+
+### Main Topics
+
+* Defining a business question and selecting KPIs
+* Comparing CPA, ROAS, Conversion Rate, Revenue, and Sessions
+* Preparing Excel sheets as separate SQLite tables
+* Writing SQL aggregation and comparison queries
+* Analyzing results by channel, region, and campaign
+* Identifying the main causes of the CPA increase
+* Creating a narrative Power BI visualization
+* Writing a short business summary
+* Preparing a measurable recommendation
+
+### Project Outputs
+
+* Source marketing dataset
+* SQL analysis file
+* Power BI report
+* Dashboard screenshot
+* Root cause analysis
+* Written summary and actionable recommendation
+
+[View the Week 4 Business Case project](./Week-4-Business-Case/)
+
+---
+
+## Internship Completion
+
+All four internship modules have been completed and documented:
 
 * ✅ Week 1 — SQL with SQLite
 * ✅ Week 2 — Excel Data Analysis
 * ✅ Week 3 — Power BI Dashboard
-* ⏳ Week 4 — Business Case Analysis
+* ✅ Week 4 — Marketing Business Case Analysis
 
-The next stage will focus on business findings, recommendations, and final reporting.
+The repository includes the project files, analysis steps, query and formula documentation, dashboards, findings, and final recommendations prepared during the internship.
 
 ---
 
-## 👤 Author
+## Author
 
 **Yalchin Hasanov**
 Junior Data Analyst
 
-* [GitHub Profile](https://github.com/Yalchin001)
-* [LinkedIn Profile](https://www.linkedin.com/in/yalchinhasanov)
+- [GitHub Profile](https://github.com/Yalchin001)
+- [LinkedIn Profile](https://www.linkedin.com/in/yalchinhasanov)
+- [Portfolio Website](https://yalchin-hasanov-portfolio.netlify.app/)
