@@ -155,7 +155,7 @@ The slicer and timeline allow me to filter the dashboard and see how the results
 ## Checkpoint 6 — Conditional Formatting
 
 <details>
-<summary><strong>checkpoint-05-conditional-formatting</strong></summary>
+<summary><strong>checkpoint-06-conditional-formatting</strong></summary>
 
 ### Conditional Formatting
 
