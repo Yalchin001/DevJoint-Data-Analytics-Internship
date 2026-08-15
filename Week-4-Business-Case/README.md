@@ -32,7 +32,7 @@ After the import, I checked the row counts. The `marketing_events` table has 5,8
 
 ### SQL Queries
 
-I wrote six SQL queries for the analysis:
+I wrote seven SQL queries for the analysis:
 
 1. Overall KPI results for July–December 2024.
 2. Overall KPI results for July–December 2025.
@@ -40,6 +40,7 @@ I wrote six SQL queries for the analysis:
 4. Channel results for July–December 2025.
 5. Results grouped by channel and region for 2025.
 6. Results grouped by campaign for 2025.
+7. Results grouped by campaign for 2024.
 
 The queries use `SUM`, `ROUND`, `WHERE`, `BETWEEN`, `GROUP BY`, `ORDER BY` and a simple `JOIN`.
 
@@ -49,12 +50,14 @@ The queries use `SUM`, `ROUND`, `WHERE`, `BETWEEN`, `GROUP BY`, `ORDER BY` and a
 
 ### Overall Result
 
-I first compared the overall results for 2024 and 2025. Sessions stayed almost the same, while revenue increased from 5.93 million to 6.60 million. ROAS increased from 13.90 to 14.39 and Conversion Rate increased from 5.71% to 5.95%.
+I compared the overall results for 2024 and 2025. Sessions stayed almost the same, while revenue increased from 5.93 million to 6.60 million. ROAS increased from 13.90 to 14.39 and Conversion Rate increased from 5.71% to 5.95%.
 
-The main negative change was CPA. It increased from 3.86 to 3.98, which means the average cost of a conversion became higher.
+The main negative change was CPA. It increased from 3.86 to 3.98, which means the average cost of a conversion became slightly higher.
 
 ### Channel and Campaign Findings
 
-Paid Social had the lowest ROAS at 4.27 and the lowest Conversion Rate at 3.18%. Paid Search had the highest channel-level CPA at 11.15.
+CPA increased in all channels. The largest channel-level increase was in Paid Search, where CPA increased from 10.80 to 11.15. Paid Social CPA also increased from 10.69 to 11.04. Paid Social had the lowest ROAS at 4.27 and the lowest Conversion Rate at 3.18% in 2025.
 
-Inside Paid Social, `Social_Prospecting` had a CPA of 11.31, a ROAS of 4.18 and a Conversion Rate of 3.10%. These results were weaker than `Social_Retargeting`, so `Social_Prospecting` appears to be the weakest campaign in the analysis.
+At campaign level, SEM_Brand had the largest CPA increase, from 10.76 to 11.13. Social_Prospecting had the weakest results in 2025, with a CPA of 11.31, a ROAS of 4.18 and a Conversion Rate of 3.10%.
+
+The comparison shows that Paid Search had the largest CPA increase, while Paid Social and Social_Prospecting had the weakest efficiency results.
