@@ -2,7 +2,7 @@
 
 During Week 1 of my DevJoint Data Analytics Internship, I worked with the Northwind database in SQLite.
 
-The main objective was to explore relational data, write structured SQL queries, and answer business-oriented questions using different SQL methods.
+The objective was to explore relational data, write SQL queries, and answer business questions using filtering, JOINs, aggregation, subqueries, window functions, and query optimization.
 
 [Open the completed SQL queries](./queries.sql)
 
@@ -12,85 +12,136 @@ The main objective was to explore relational data, write structured SQL queries,
 
 In this project, I:
 
-* Explored the database tables and their relationships
-* Filtered and sorted records based on task requirements
-* Calculated totals, averages, and record counts
-* Grouped data to compare categories, customers, and products
-* Combined related tables using SQL JOIN operations
-* Used CTEs, subqueries, and window functions
-* Reviewed query optimization using an index
-* Added comments explaining the purpose of the main queries
+* Filtered and sorted product and order records
+* Combined related tables using `INNER JOIN`, `LEFT JOIN`, and `SELF JOIN`
+* Used ID-based relationships where the required keys were available
+* Calculated sales using price, quantity, and discount data
+* Grouped results by categories and customers
+* Used CTEs and subqueries for multi-step analysis
+* Applied window functions within product categories
+* Compared query plans before and after creating an index
+* Replaced a correlated subquery with a more efficient JOIN
 
 ---
 
 ## SQL Concepts Applied
 
-* **Data Filtering:** `SELECT`, `WHERE`, `ORDER BY`, `LIMIT`, `LIKE`, and `IS NULL`
-* **Data Aggregation:** `SUM`, `AVG`, `COUNT`, `GROUP BY`, and `HAVING`
-* **Table Relationships:** `INNER JOIN`, `LEFT JOIN`, and `SELF JOIN`
-* **Advanced Queries:** Subqueries and Common Table Expressions (`CTE`)
-* **Window Functions:** `ROW_NUMBER`, `RANK`, and cumulative calculations
-* **Query Optimization:** Index creation and query restructuring
+* **Filtering and Sorting:** `SELECT`, `WHERE`, `BETWEEN`, `TRIM`, `ORDER BY`, and `LIMIT`
+* **Aggregation:** `SUM`, `AVG`, `COUNT`, `ROUND`, `GROUP BY`, and `HAVING`
+* **Table Relationships:** `INNER JOIN`, `LEFT JOIN`, and self-join
+* **Advanced Queries:** CTEs, subqueries, and correlated subqueries
+* **Window Functions:** `RANK`, `ROW_NUMBER`, `SUM OVER`, and `PARTITION BY`
+* **Query Optimization:** `CREATE INDEX`, `DROP INDEX`, `EXPLAIN QUERY PLAN`, and query restructuring
 
 ---
 
 ## Business Questions Addressed
 
-The SQL queries were prepared to complete the following analytical tasks:
+The SQL queries were written to complete the following analytical tasks:
 
-* Filter orders by product, discount, region, city, country, date, freight, and order value
-* Combine product, category, order, supplier, and employee data using different JOIN operations
-* Calculate category-level totals, averages, and product counts
-* Identify products with total quantities above the overall average
-* Rank product records and calculate cumulative quantities
-* Compare product prices with category averages
-* Review query optimization using an index and JOIN
+* Filter orders by product, discount, location, date, freight, and calculated order value
+* Combine product, category, order, supplier, and employee information
+* Calculate category sales using price, quantity, and discount
+* Identify the five customers with the highest total sales
+* Find products whose total ordered quantity is above the overall average
+* Rank products by price within their categories
+* Calculate cumulative stock value for each category
+* Compare query plans before and after creating an index
+* Compare a correlated subquery with an optimized JOIN version
 
 ---
 
 ## Checkpoint Evidence
 
-The screenshots below show the executed SQL queries and their results for each checkpoint.
+The sections below contain selected query results for each checkpoint.
 
 <details>
 <summary><strong>Checkpoint 1 — SELECT, WHERE, ORDER BY and LIMIT</strong></summary>
 
-![Checkpoint 1 SQL result](./screenshots/checkpoint-01-select-filter.jpeg)
+### Latest French orders
+
+![Latest French orders sorted by OrderDate](./screenshots/checkpoint-01-question-03.png)
+
+### Products with the highest calculated order value
+
+![Products sorted by calculated order value](./screenshots/checkpoint-01-question-05.png)
 
 </details>
 
 <details>
 <summary><strong>Checkpoint 2 — JOIN Operations</strong></summary>
 
-![Checkpoint 2 SQL result](./screenshots/checkpoint-02-joins.jpeg)
+### LEFT JOIN
+
+![Product and order information combined with LEFT JOIN](./screenshots/checkpoint-02-left-join.png)
+
+### INNER JOIN
+
+![Products above the average price combined with related information](./screenshots/checkpoint-02-inner-join.png)
+
+### Self-join
+
+![Employees displayed with their managers](./screenshots/checkpoint-02-self-join.png)
 
 </details>
 
 <details>
 <summary><strong>Checkpoint 3 — GROUP BY and HAVING</strong></summary>
 
-![Checkpoint 3 SQL result](./screenshots/checkpoint-03-group-by-having.jpeg)
+### Sales by category
+
+![Category sales aggregation](./screenshots/checkpoint-03-category-sales.png)
+
+### Top five customers by sales
+
+![Top customers by total sales](./screenshots/checkpoint-03-top-customers.png)
 
 </details>
 
 <details>
 <summary><strong>Checkpoint 4 — CTE and Subquery</strong></summary>
 
-![Checkpoint 4 SQL result](./screenshots/checkpoint-04-cte-subquery.jpeg)
+### Products above the average ordered quantity
+
+![CTE and subquery result](./screenshots/checkpoint-04-cte-subquery.png)
 
 </details>
 
 <details>
 <summary><strong>Checkpoint 5 — Window Functions</strong></summary>
 
-![Checkpoint 5 SQL result](./screenshots/checkpoint-05-window-functions.jpeg)
+### RANK
+
+![Products ranked by price within each category](./screenshots/checkpoint-05-rank.png)
+
+### ROW_NUMBER
+
+![Products assigned unique row numbers within each category](./screenshots/checkpoint-05-row-number.png)
+
+### Running stock value
+
+![Cumulative stock value within each category](./screenshots/checkpoint-05-running-stock-value.png)
 
 </details>
 
 <details>
 <summary><strong>Checkpoint 6 — Query Optimization</strong></summary>
 
-![Checkpoint 6 SQL result](./screenshots/checkpoint-06-query-optimization.jpeg)
+### Query plan before index creation
+
+![Query plan showing a table scan](./screenshots/checkpoint-06-before-index.png)
+
+### Query plan after index creation
+
+![Query plan showing index usage](./screenshots/checkpoint-06-after-index.png)
+
+### Correlated subquery
+
+![Correlated subquery result](./screenshots/checkpoint-06-correlated-subquery.png)
+
+### Optimized JOIN
+
+![Optimized JOIN result](./screenshots/checkpoint-06-optimized-join.png)
 
 </details>
 
@@ -101,9 +152,9 @@ The screenshots below show the executed SQL queries and their results for each c
 | File           | Description                                      |
 | -------------- | ------------------------------------------------ |
 | `README.md`    | Overview and documentation of the Week 1 project |
-| `queries.sql`  | Completed SQL queries with comments              |
+| `queries.sql`  | Completed SQL queries with explanations          |
 | `northwind.db` | Northwind SQLite database used in the analysis   |
-| `screenshots/` | Screenshots of the executed queries and results  |
+| `screenshots/` | Executed queries and result screenshots          |
 
 ---
 
@@ -121,7 +172,7 @@ The screenshots below show the executed SQL queries and their results for each c
 
 **Week 1 has been completed and evaluated.**
 
-The SQL queries, database, and supporting screenshots are available in this folder.
+The folder contains the reviewed SQL queries, supporting database, and updated result screenshots.
 
 ---
 
