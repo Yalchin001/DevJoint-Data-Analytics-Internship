@@ -347,65 +347,101 @@ SELECT
 FROM Products
 ORDER BY CategoryID, StockValue DESC, ProductID;
 
-
 /* =====================================================
    CHECKPOINT 6
    QUERY OPTIMIZATION
    ===================================================== */
 
 
-/* 1. CREATE INDEX
-
-   Explanation:
-   Query optimization means returning the same SQL result
-   by using less time and fewer system resources.
-
-   One commonly used optimization method is an index.
-   Another method is writing the query more efficiently,
-   such as replacing a correlated subquery with a JOIN.
-
-   An index is created on columns frequently used in JOIN,
-   WHERE, ORDER BY, and GROUP BY operations. It helps SQL
-   locate the required data faster.
-*/
-
-create index idx_OrderId
-ON Orders(OrderId)
-
-select * from Orders Where OrderId=20000
-
-
-/* 2. REPLACING A CORRELATED SUBQUERY WITH A JOIN
+/* TASK 1 - INDEX OPTIMIZATION
 
    Question:
-   Compare each product's price with the average price of
-   its own category.
+   Show how an index improves a query that filters orders
+   by ShipCountry.
 
    Explanation:
-   A correlated subquery reads a product, calculates the
-   category average, performs the comparison, and then
-   continues to the next product.
+   The previous OrderID index was unnecessary because
+   OrderID is the primary key.
 
-   Since the table contains 77 rows, the correlated
-   subquery repeats this process for the rows in the table.
-   This approach may become slow when working with a large
-   dataset.
-
-   With the JOIN approach, the average price of every
-   category is calculated first. The calculated category
-   averages are then joined to the Products table.
-
-   As a result, the category averages are calculated once
-   and the products are compared with the appropriate
-   category average.
+   Before creating the ShipCountry index, SQLite scans the
+   Orders table. After the index is created, SQLite uses
+   the index to search for matching records.
 */
 
-select pro.ProductName,pro.UnitPrice,stat.avgprice 
-from Products pro
-left join
-(select CategoryID,
-round(avg(UnitPrice),2) as Avgprice
-from Products
-group by CategoryID) stat
-on pro.CategoryID=stat.CategoryID
-where pro.UnitPrice>stat.avgprice
+DROP INDEX IF EXISTS idx_OrderId;
+DROP INDEX IF EXISTS idx_orders_shipcountry;
+
+EXPLAIN QUERY PLAN
+SELECT *
+FROM Orders
+WHERE ShipCountry = 'France';
+
+CREATE INDEX IF NOT EXISTS idx_orders_shipcountry
+ON Orders(ShipCountry);
+
+EXPLAIN QUERY PLAN
+SELECT *
+FROM Orders
+WHERE ShipCountry = 'France';
+
+
+/* TASK 2 - CORRELATED SUBQUERY
+
+   Question:
+   Find products priced above the average price of their
+   own category.
+
+   Explanation:
+   The correlated subquery calculates the category average
+   separately for each product row. It returns the correct
+   result, but repeats the average calculation many times.
+*/
+
+SELECT
+    pro.ProductID,
+    pro.ProductName,
+    pro.CategoryID,
+    pro.UnitPrice,
+    ROUND((
+        SELECT AVG(pro2.UnitPrice)
+        FROM Products pro2
+        WHERE pro2.CategoryID = pro.CategoryID
+    ), 2) AS CategoryAveragePrice
+FROM Products pro
+WHERE pro.UnitPrice > (
+    SELECT AVG(pro3.UnitPrice)
+    FROM Products pro3
+    WHERE pro3.CategoryID = pro.CategoryID
+)
+ORDER BY pro.ProductID;
+
+
+/* TASK 3 - OPTIMIZED JOIN
+
+   Question:
+   Return the same result by replacing the correlated
+   subquery with a JOIN.
+
+   Explanation:
+   This version calculates the average price once for each
+   category. The category averages are then joined to the
+   Products table, avoiding repeated calculations.
+*/
+
+SELECT
+    pro.ProductID,
+    pro.ProductName,
+    pro.CategoryID,
+    pro.UnitPrice,
+    ROUND(stat.AveragePrice, 2) AS CategoryAveragePrice
+FROM Products pro
+INNER JOIN (
+    SELECT
+        CategoryID,
+        AVG(UnitPrice) AS AveragePrice
+    FROM Products
+    GROUP BY CategoryID
+) stat
+    ON pro.CategoryID = stat.CategoryID
+WHERE pro.UnitPrice > stat.AveragePrice
+ORDER BY pro.ProductID;
