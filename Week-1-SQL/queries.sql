@@ -114,10 +114,15 @@ select pro.ProductID,pro.ProductName,pro.CategoryID,pro.QuantityPerUnit,cat.Cate
    are above the average product price.
 
    Explanation:
-   Based on the "Products Above Average Price" table, this
+   Based on the "Products Above Average Price" view, this
    query returns ProductID, CategoryID, UnitPrice,
    UnitsInStock, SupplierID, CategoryName, and
    SupplierRegion for the related products.
+   The "Products Above Average Price" view does not contain
+   ProductID, so it is joined to Products by ProductName.
+
+   ProductDetails_V contains ProductID, so that relationship
+   is created using ProductID.
 */
 
 select abv.ProductName,pro.ProductID,pro.CategoryID,pro.UnitPrice,pro.UnitsInStock,
@@ -127,7 +132,7 @@ select abv.ProductName,pro.ProductID,pro.CategoryID,pro.UnitPrice,pro.UnitsInSto
    inner join Categories cat 
    on pro.CategoryID=cat.CategoryID 
    inner join ProductDetails_V prov 
-   on abv.ProductName = prov.ProductName
+   on pro.ProductID = prov.ProductID
 
 
 /* TASK 3 -  SELF JOIN
