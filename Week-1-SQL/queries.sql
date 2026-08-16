@@ -163,23 +163,63 @@ select emp1.LastName as EmployeeLastName,emp1.FirstName as EmployeeName,
    ===================================================== */
 
 
-/* Question:
-   Calculate SUM, AVG, and record count for each category.
+/* TASK 1 - SALES BY CATEGORY
+
+   Question:
+   Calculate total sales, average sale per order line, and
+   order-line count for each product category.
 
    Explanation:
-   The records are grouped and sorted by CategoryID.
-   SUM and AVG are calculated for every category.
+   This query uses actual transaction data from the order
+   details. Sales are calculated using UnitPrice, Quantity,
+   and Discount.
 
-   HAVING COUNT(*) > 1 returns categories containing more
-   than one product. AVG does not include NULL values.
-   There are no NULL values in this table.
+   The results are grouped by category. HAVING keeps
+   categories containing more than one order line.
 */
 
-select CategoryID,sum(unitprice*QuantityPerUnit) as TotalSales,
-   round(avg(unitprice*QuantityPerUnit),2) as Average,count(*) as Quantity from products 
-   Group by CategoryID having count(*)>1 
-   order by CategoryID
+SELECT
+    pro.CategoryID,
+    cat.CategoryName,
+    ROUND(SUM(ext.UnitPrice * ext.Quantity * (1 - ext.Discount)), 2) AS TotalSales,
+    ROUND(AVG(ext.UnitPrice * ext.Quantity * (1 - ext.Discount)), 2) AS AverageSale,
+    COUNT(*) AS OrderLineCount
+FROM "Order Details Extended" ext
+INNER JOIN Products pro
+    ON ext.ProductID = pro.ProductID
+INNER JOIN Categories cat
+    ON pro.CategoryID = cat.CategoryID
+GROUP BY pro.CategoryID, cat.CategoryName
+HAVING COUNT(*) > 1
+ORDER BY pro.CategoryID;
 
+
+/* TASK 2 - TOP 5 CUSTOMERS BY SALES
+
+   Question:
+   Find the five customers with the highest total sales.
+
+   Explanation:
+   This query calculates total sales and distinct order
+   count for each customer. HAVING keeps customers with
+   more than one order, and the results are sorted from
+   the highest total sales to the lowest.
+*/
+
+SELECT
+    ord.CustomerID,
+    cus.CompanyName,
+    ROUND(SUM(ext.UnitPrice * ext.Quantity * (1 - ext.Discount)), 2) AS TotalSales,
+    COUNT(DISTINCT ext.OrderID) AS OrderCount
+FROM "Order Details Extended" ext
+INNER JOIN Orders ord
+    ON ext.OrderID = ord.OrderID
+INNER JOIN Customers cus
+    ON ord.CustomerID = cus.CustomerID
+GROUP BY ord.CustomerID, cus.CompanyName
+HAVING COUNT(DISTINCT ext.OrderID) > 1
+ORDER BY TotalSales DESC
+LIMIT 5;
 
 /* =====================================================
    CHECKPOINT 4
