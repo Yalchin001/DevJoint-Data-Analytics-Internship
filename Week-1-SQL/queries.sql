@@ -97,13 +97,17 @@ SELECT * FROM Products
    This query is used to determine product information,
    QuantityPerUnit, the category of each product, and the
    related OrderID, CustomerID, OrderDate, and ShipCountry.
+   Products is joined to the order details by ProductID because
+   it is more reliable than ProductName. Multiple rows for the
+   same product are expected because a product can appear in
+   different orders.
 */
 
 select pro.ProductID,pro.ProductName,pro.CategoryID,pro.QuantityPerUnit,cat.CategoryName,
    ext.OrderID,ord.CustomerID,ord.OrderDate,ord.ShipCountry from Products pro 
    left JOIN Categories cat
    on pro.CategoryId = cat.CategoryId left join "Order Details Extended" ext 
-   on pro.ProductName = ext.ProductName 
+   on pro.ProductID = ext.ProductID
    left join Orders ord on ord.OrderID = ext.OrderID
 
 
