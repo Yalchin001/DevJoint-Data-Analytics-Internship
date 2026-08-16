@@ -232,18 +232,32 @@ LIMIT 5;
    than the overall average product quantity.
 
    Explanation:
-   First, the CTE calculates the total quantity for every
-   product.
+   First, the CTE calculates the total ordered quantity
+   for each product using ProductID and ProductName.
 
-   The subquery then calculates the average of these total
-   quantities. The main query returns products whose total
-   quantity is higher than the overall average and sorts
-   them from highest to lowest.
+   The subquery calculates the average of these product
+   totals. The main query returns products above the
+   overall average and sorts them from highest to lowest.
 */
 
-with ProductSales as ( select ProductName,sum(Quantity) as TotalQuantity from "Order Details Extended" 
-   group by ProductName ) select * from ProductSales 
-   where TotalQuantity >(select avg(TotalQuantity) from ProductSales) order by TotalQuantity desc
+WITH ProductSales AS (
+    SELECT
+        ProductID,
+        ProductName,
+        SUM(Quantity) AS TotalQuantity
+    FROM "Order Details Extended"
+    GROUP BY ProductID, ProductName
+)
+SELECT
+    ProductID,
+    ProductName,
+    TotalQuantity
+FROM ProductSales
+WHERE TotalQuantity > (
+    SELECT AVG(TotalQuantity)
+    FROM ProductSales
+)
+ORDER BY TotalQuantity DESC;
 
 
 /* =====================================================
