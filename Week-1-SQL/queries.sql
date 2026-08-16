@@ -39,20 +39,19 @@ SELECT * FROM Orders
    where Trim(ShipRegion)="Scandinavia" and Trim(ShipCity)="Helsinki" 
    Order By OrderDate Limit 5
 
-
-/* Question 3:
+   /* Question 3:
    Find the latest 20 French orders with OrderID values
    between 10250 and 11000.
 
    Explanation:
-   This query returns the last 20 orders from France whose
-   OrderID is between 10250 and 11000.
+   This query returns the latest 20 orders from France,
+   based on OrderDate, whose OrderID is between
+   10250 and 11000.
 */
 
 SELECT * FROM Orders 
    Where ShipCountry="France" and OrderID between 10250 and 11000 
-   Order By OrderID DESC limit 20
-
+   Order By OrderDate DESC limit 20
 
 /* Question 4:
    Find the ten most recently shipped orders from Madrid
@@ -68,19 +67,19 @@ SELECT * FROM Orders
    Order By ShippedDate DESC limit 10
 
 
-/* Question 5:
-   Find the first three records where the calculated order
-   value is equal to or greater than 500.
+  /* Question 5:
+   Find the three products with the highest calculated
+   order value among records where the value is at least 500.
 
    Explanation:
-   This query returns the first three records where
-   UnitPrice multiplied by UnitsOnOrder is at least 500.
+   This query filters products where UnitPrice multiplied
+   by UnitsOnOrder is at least 500, sorts them by the
+   calculated value, and returns the highest three records.
 */
 
 SELECT * FROM Products 
    Where UnitPrice*UnitsOnOrder>=500 
-   Order By UnitPrice*UnitsOnOrder>=500 LIMIT 3
-
+   Order By UnitPrice*UnitsOnOrder DESC LIMIT 3
 
 /* =====================================================
    CHECKPOINT 2
