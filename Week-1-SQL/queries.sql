@@ -266,49 +266,86 @@ ORDER BY TotalQuantity DESC;
    ===================================================== */
 
 
-/* 1. RANK
+/* TASK 1 - RANK
+
+   Question:
+   Rank products by price within each category.
 
    Explanation:
-   RANK does not assign a unique sequence number to every
-   row. Rows containing the same ProductID receive the same
-   rank.
+   PARTITION BY separates products by CategoryID, so the
+   ranking restarts for every category.
 
-   If the first ProductID appears several times, all those
-   rows receive rank 1. The following ProductID receives
-   its rank based on the number of preceding rows, which
-   may create gaps between rank values.
+   Products with the same UnitPrice receive the same rank.
+   Gaps may appear after products with equal prices.
 */
 
-select ProductID,ProductName,ExtendedPrice,
-rank()
-over(order by ProductID) 
-from "Order Details Extended"
+SELECT
+    ProductID,
+    ProductName,
+    CategoryID,
+    UnitPrice,
+    RANK() OVER (
+        PARTITION BY CategoryID
+        ORDER BY UnitPrice DESC
+    ) AS PriceRank
+FROM Products
+ORDER BY CategoryID, PriceRank;
 
 
-/* 2. ROW_NUMBER
+/* TASK 2 - ROW_NUMBER
+
+   Question:
+   Assign a unique price-order number to every product
+   within its category.
 
    Explanation:
    ROW_NUMBER assigns a different sequential number to
-   every row, even when several rows have the same
-   ProductID.
+   every product, including products with the same price.
+   ProductID is used to determine the order between equal
+   prices.
 */
 
-select ProductID,ProductName,ExtendedPrice,
-row_number()
-over(order by ProductID) 
-from "Order Details Extended"
+SELECT
+    ProductID,
+    ProductName,
+    CategoryID,
+    UnitPrice,
+    ROW_NUMBER() OVER (
+        PARTITION BY CategoryID
+        ORDER BY UnitPrice DESC, ProductID
+    ) AS PriceRowNumber
+FROM Products
+ORDER BY CategoryID, PriceRowNumber;
 
 
-/* 3. SUM OVER
+/* TASK 3 - RUNNING STOCK VALUE
+
+   Question:
+   Calculate the cumulative stock value within each
+   product category.
 
    Explanation:
-   SUM with OVER calculates a cumulative quantity according
-   to the ProductID order. The calculated value continues
-   increasing as the query moves through the rows.
+   StockValue is calculated by multiplying UnitPrice by
+   UnitsInStock. SUM OVER calculates the running value
+   inside each category, starting with the product that
+   has the highest stock value.
 */
 
-select ProductID,ProductName,Sum(Quantity) over(order by ProductID) 
-from "Order Details Extended"
+SELECT
+    ProductID,
+    ProductName,
+    CategoryID,
+    ROUND(UnitPrice * UnitsInStock, 2) AS StockValue,
+    ROUND(
+        SUM(UnitPrice * UnitsInStock) OVER (
+            PARTITION BY CategoryID
+            ORDER BY UnitPrice * UnitsInStock DESC, ProductID
+            ROWS BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW
+        ),
+        2
+    ) AS RunningCategoryStockValue
+FROM Products
+ORDER BY CategoryID, StockValue DESC, ProductID;
 
 
 /* =====================================================
